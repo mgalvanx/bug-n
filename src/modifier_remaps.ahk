@@ -1,9 +1,9 @@
-LWin & vk07::return
+
 
 RAlt::RCtrl
 
 LCtrl::LWin
-RCtl::LWin
+RCtrl::RWin
     
 
 
@@ -17,7 +17,7 @@ RCtl::LWin
     return
 
 *Capslock up::
-    Send {Blind}{RCtrl up}
+    Send {Blind}{LCtrl up}
     ; Tooltip, %A_PRIORKEY%
     ; SetTimer, RemoveTooltip, 1000
     if A_PRIORKEY = CapsLock
