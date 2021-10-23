@@ -192,5 +192,6 @@ Return
 #Include View.ahk
 #Include Window.ahk
 #Include modifier_remaps.ahk
+#Include vim_arrow_hotkeys.ahk
 #Include %A_ScriptDir%\MonitorManager.ahk
 

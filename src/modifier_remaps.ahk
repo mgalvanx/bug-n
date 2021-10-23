@@ -1,36 +1,22 @@
+;Dual Function LWin/Capslock and RWin/Enter
 
 
-RAlt::RCtrl
+;This script requires that you use sharpkeys to remap caplock to LWin. 
 
-LCtrl::LWin
-RCtrl::RWin
-    
-
-
-; Map Capslock to Control
-; Map press & release of Capslock with no other key to Esc
-; Press both shift keys together to toggle Capslock
+;Remapping Enter to RWin is optional
+;The windows menu is nullfied in both remaps(Its meant to be used with a 3rd party launcher like powertoys run)
+;The windows menu can be reenabled by commenting or deleting (LWin & vk07::return)
 
 
-*Capslock::
-    Send {Blind}{LCtrl down}
-    return
+;This makes capslock act as esc when tapped and the windows key when held(Shortcuts still work). 
+LWin & vk07::return
+LWin::Esc ; Second remapping can be anything
 
-*Capslock up::
-    Send {Blind}{LCtrl up}
-    ; Tooltip, %A_PRIORKEY%
-    ; SetTimer, RemoveTooltip, 1000
-    if A_PRIORKEY = CapsLock
-    {
-        	Send {Esc}
-    }
-    return
+;This makes enter act as enter when tapped and the windows key when held(Shortcuts still work)
+;RWin & vk07::return
+;RWin::Enter 
 
-RemoveTooltip(){
-    SetTimer, RemoveTooltip, Off
-    Tooltip
-    return
-}
+
 
 ToggleCaps(){
     ; this is needed because by default, AHK turns CapsLock off before doing Send
@@ -39,6 +25,7 @@ ToggleCaps(){
     SetStoreCapsLockMode, On
     return
 }
+;Use LShift and RShift To Turn Capslock on and off
 LShift & RShift::ToggleCaps()
 RShift & LShift::ToggleCaps()
 
