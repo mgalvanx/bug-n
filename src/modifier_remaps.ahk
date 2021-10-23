@@ -13,8 +13,8 @@ LWin & vk07::return
 LWin::Esc ; Second remapping can be anything
 
 ;This makes enter act as enter when tapped and the windows key when held(Shortcuts still work)
-;RWin & vk07::return
-;RWin::Enter 
+RWin & vk07::return
+RWin::Enter 
 
 
 
